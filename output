@@ -1,0 +1,68 @@
+
+PLAY [experiments] ************************************************************ 
+
+GATHERING FACTS *************************************************************** 
+<10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.179> REMOTE_MODULE setup
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581 && echo $HOME/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581'"]
+<10.129.44.179> PUT /tmp/tmp8cs_rW TO /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/setup
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/ >/dev/null 2>&1'"]
+ok: [10.129.44.179]
+<10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.181> REMOTE_MODULE setup
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617 && echo $HOME/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617'"]
+<10.129.44.181> PUT /tmp/tmpjQBbFH TO /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/setup
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/ >/dev/null 2>&1'"]
+ok: [10.129.44.181]
+
+TASK: [Install nginx package] ************************************************* 
+<10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557 && echo $HOME/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557'"]
+<10.129.44.181> PUT /tmp/tmpjTaKPH TO /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/apt
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/ >/dev/null 2>&1'"]
+ok: [10.129.44.181] => {"changed": false}
+<10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281 && echo $HOME/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281'"]
+<10.129.44.179> PUT /tmp/tmpIgaOUW TO /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/apt
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/ >/dev/null 2>&1'"]
+ok: [10.129.44.179] => {"changed": false}
+
+TASK: [Starting nginx service] ************************************************ 
+<10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.181> REMOTE_MODULE service name=nginx state=started
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355 && echo $HOME/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355'"]
+<10.129.44.181> PUT /tmp/tmpYNz48T TO /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/service
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/ >/dev/null 2>&1'"]
+ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+<10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.179> REMOTE_MODULE service name=nginx state=started
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334 && echo $HOME/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334'"]
+<10.129.44.179> PUT /tmp/tmpIFh_bD TO /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/service
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/ >/dev/null 2>&1'"]
+ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+
+PLAY RECAP ******************************************************************** 
+10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+
+
+PLAY [experiments] ************************************************************ 
+
+GATHERING FACTS *************************************************************** 
+<10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.179> REMOTE_MODULE setup
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652'"]
+<10.129.44.179> PUT /tmp/tmpNZ7oz6 TO /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/setup
+<10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/ >/dev/null 2>&1'"]
+ok: [10.129.44.179]
+<10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+<10.129.44.181> REMOTE_MODULE setup
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672'"]
+<10.129.44.181> PUT /tmp/tmpyEf53g TO /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/setup
+<10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/ >/dev/null 2>&1'"]
+ok: [10.129.44.181]
+
+TASK: [Install nginx package] ************************************************* 
+104

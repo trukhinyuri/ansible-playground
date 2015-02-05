@@ -1,0 +1,1355 @@
+2015-01-28 18:22:35,404 p=25113 u=root |  
+2015-01-28 18:22:35,405 p=25113 u=root |  /usr/bin/ansible experiments -a /bin/echo hello -i inventory
+2015-01-28 18:22:35,405 p=25113 u=root |  
+2015-01-28 18:22:39,849 p=25113 u=root |  10.129.44.179 | success | rc=0 >>
+hello
+
+2015-01-28 18:22:39,972 p=25113 u=root |  10.129.44.181 | success | rc=0 >>
+hello
+
+2015-01-28 18:23:23,147 p=25164 u=root |  
+2015-01-28 18:23:23,147 p=25164 u=root |  /usr/bin/ansible experiments -a /bin/echo hello
+2015-01-28 18:23:23,148 p=25164 u=root |  
+2015-01-28 18:23:23,312 p=25164 u=root |  10.129.44.179 | success | rc=0 >>
+hello
+
+2015-01-28 18:23:23,332 p=25164 u=root |  10.129.44.181 | success | rc=0 >>
+hello
+
+2015-01-28 18:23:30,165 p=25197 u=root |  
+2015-01-28 18:23:30,165 p=25197 u=root |  /usr/bin/ansible experiments -m ping
+2015-01-28 18:23:30,165 p=25197 u=root |  
+2015-01-28 18:23:30,347 p=25197 u=root |  10.129.44.181 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2015-01-28 18:23:30,350 p=25197 u=root |  10.129.44.179 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2015-01-28 18:24:08,391 p=25247 u=root |  
+2015-01-28 18:24:08,392 p=25247 u=root |  /usr/bin/ansible experiments -m ping
+2015-01-28 18:24:08,392 p=25247 u=root |  
+2015-01-28 18:24:08,435 p=25247 u=root |  10.129.44.179 | FAILED => module ping not found in /root/ansible/modules
+2015-01-28 18:24:08,440 p=25247 u=root |  10.129.44.181 | FAILED => module ping not found in /root/ansible/modules
+2015-01-28 18:25:28,145 p=25290 u=root |  
+2015-01-28 18:25:28,145 p=25290 u=root |  /usr/bin/ansible experiments -m ping
+2015-01-28 18:25:28,145 p=25290 u=root |  
+2015-01-28 18:25:29,794 p=25290 u=root |  10.129.44.179 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2015-01-28 18:25:29,825 p=25290 u=root |  10.129.44.181 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2015-01-28 18:27:43,956 p=25358 u=root |  
+2015-01-28 18:27:43,957 p=25358 u=root |  /usr/bin/ansible experiments -a /bin/echo Hello, World!
+2015-01-28 18:27:43,957 p=25358 u=root |  
+2015-01-28 18:27:45,597 p=25358 u=root |  10.129.44.181 | success | rc=0 >>
+Hello, World!
+
+2015-01-28 18:27:45,629 p=25358 u=root |  10.129.44.179 | success | rc=0 >>
+Hello, World!
+
+2015-01-28 23:40:49,769 p=26476 u=root |   
+2015-01-28 23:40:49,769 p=26476 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-01-28 23:40:49,769 p=26476 u=root |   
+2015-01-28 23:40:49,784 p=26476 u=root |  PLAY [experiments] ************************************************************ 
+2015-01-28 23:40:49,785 p=26476 u=root |  GATHERING FACTS *************************************************************** 
+2015-01-28 23:40:52,708 p=26476 u=root |  ok: [10.129.44.179]
+2015-01-28 23:40:53,531 p=26476 u=root |  ok: [10.129.44.181]
+2015-01-28 23:40:53,543 p=26476 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-01-28 23:41:11,195 p=26476 u=root |  changed: [10.129.44.181]
+2015-01-28 23:41:16,570 p=26476 u=root |  changed: [10.129.44.179]
+2015-01-28 23:41:16,588 p=26476 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-01-28 23:41:16,794 p=26476 u=root |  ok: [10.129.44.181]
+2015-01-28 23:41:16,802 p=26476 u=root |  ok: [10.129.44.179]
+2015-01-28 23:41:16,815 p=26476 u=root |  PLAY RECAP ******************************************************************** 
+2015-01-28 23:41:16,815 p=26476 u=root |  10.129.44.179              : ok=3    changed=1    unreachable=0    failed=0   
+2015-01-28 23:41:16,816 p=26476 u=root |  10.129.44.181              : ok=3    changed=1    unreachable=0    failed=0   
+2015-01-28 23:50:01,856 p=26683 u=root |   
+2015-01-28 23:50:01,856 p=26683 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml --list-host
+2015-01-28 23:50:01,856 p=26683 u=root |   
+2015-02-05 14:19:14,236 p=7520 u=root |  
+2015-02-05 14:19:14,290 p=7520 u=root |  /usr/bin/ansible -m setup
+2015-02-05 14:19:14,290 p=7520 u=root |  
+2015-02-05 14:19:25,693 p=7523 u=root |  
+2015-02-05 14:19:25,693 p=7523 u=root |  /usr/bin/ansible -m setup host1
+2015-02-05 14:19:25,693 p=7523 u=root |  
+2015-02-05 14:19:25,730 p=7523 u=root |  No hosts matched
+2015-02-05 14:19:58,748 p=7526 u=root |  
+2015-02-05 14:19:58,748 p=7526 u=root |  /usr/bin/ansible -m setup host1
+2015-02-05 14:19:58,748 p=7526 u=root |  
+2015-02-05 14:19:58,751 p=7526 u=root |  No hosts matched
+2015-02-05 14:20:38,646 p=7529 u=root |  
+2015-02-05 14:20:38,646 p=7529 u=root |  /usr/bin/ansible -m setup experiments
+2015-02-05 14:20:38,646 p=7529 u=root |  
+2015-02-05 14:20:41,557 p=7529 u=root |  10.129.44.181 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "10.129.44.181", 
+            "109.120.181.56"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::21c:42ff:fe44:4fef", 
+            "fe80::21c:42ff:fec0:4037"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/17/2015", 
+        "ansible_bios_version": "6.8.23717.1100559", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.13.0-44-generic", 
+            "ro": true, 
+            "root": "UUID=a5e304d2-077d-42e7-be2c-c051ad261f01"
+        }, 
+        "ansible_date_time": {
+            "date": "2015-02-05", 
+            "day": "05", 
+            "epoch": "1423135127", 
+            "hour": "14", 
+            "iso8601": "2015-02-05T11:18:47Z", 
+            "iso8601_micro": "2015-02-05T11:18:47.408354Z", 
+            "minute": "18", 
+            "month": "02", 
+            "second": "47", 
+            "time": "14:18:47", 
+            "tz": "MSK", 
+            "tz_offset": "+0300", 
+            "weekday": "Thursday", 
+            "year": "2015"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "109.120.181.56", 
+            "alias": "eth1", 
+            "gateway": "109.120.181.1", 
+            "interface": "eth1", 
+            "macaddress": "00:1c:42:c0:40:37", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "109.120.181.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801HR/HO/HH (ICH8R/DO/DH) 6 port SATA Controller [AHCI mode] (rev 02)", 
+                "model": "Debian-6-x64-0", 
+                "partitions": {
+                    "sda1": {
+                        "sectors": "41940992", 
+                        "sectorsize": 512, 
+                        "size": "20.00 GB", 
+                        "start": "2048"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "ATA"
+            }
+        }, 
+        "ansible_distribution": "Ubuntu", 
+        "ansible_distribution_major_version": "14", 
+        "ansible_distribution_release": "trusty", 
+        "ansible_distribution_version": "14.04", 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LANGUAGE": "en_US:en", 
+            "LC_CTYPE": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "10.129.44.177 39733 22", 
+            "SSH_CONNECTION": "10.129.44.177 39733 10.129.44.181 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "screen", 
+            "USER": "root", 
+            "XDG_RUNTIME_DIR": "/run/user/0", 
+            "XDG_SESSION_ID": "4", 
+            "_": "/bin/sh"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "10.129.44.181", 
+                "netmask": "255.0.0.0", 
+                "network": "10.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe44:4fef", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:44:4f:ef", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_eth1": {
+            "active": true, 
+            "device": "eth1", 
+            "ipv4": {
+                "address": "109.120.181.56", 
+                "netmask": "255.255.255.0", 
+                "network": "109.120.181.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fec0:4037", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:c0:40:37", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Rack Mount Chassis", 
+        "ansible_fqdn": "ansible-for-config2", 
+        "ansible_hostname": "ansible-for-config2", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth1", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.13.0-44-generic", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "trusty", 
+            "description": "Ubuntu 14.04 LTS", 
+            "id": "Ubuntu", 
+            "major_release": "14", 
+            "release": "14.04"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 1451, 
+        "ansible_memtotal_mb": 1998, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sda1", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,errors=remount-ro", 
+                "size_available": 17903378432, 
+                "size_total": 21002579968
+            }
+        ], 
+        "ansible_nodename": "ansible-for-config2", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.30GHz", 
+            "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.30GHz"
+        ], 
+        "ansible_processor_cores": 2, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 2, 
+        "ansible_product_name": "Parallels Virtual Platform", 
+        "ansible_product_serial": "Parallels-85 94 92 BA BC 19 4B 82 B6 3B BE 73 81 C9 21 D0", 
+        "ansible_product_uuid": "859492BA-BC19-4B82-B63B-BE7381C921D0", 
+        "ansible_product_version": "None", 
+        "ansible_python_version": "2.7.6", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANtHn+LXbq2Ay48dkkXqJtdyWfxdLorvCsYXXj+LDzSdLQztiMohEran/ox58GQRARQzb5o3iXzpuyKlfoJY5zg0yZZufiwrA04AD8UQE77Reo7foGtshJSfUeYPWN9hEoVdfFQqNkXk1Uu1GiHo2JZCIE7Akg2KwWDuaaWF/Gu3AAAAFQDj3JLVzjZL8jNqIL1pLQ4ZexOHBwAAAIAh+ASFPaeMMICiRCok/kRs9RtdhOrfRRIeOMt3sGqKKpk/L7SGw/y7SnJ9AlObn1+MVjVMBMDxendaIhsARPIqB9qhNjc2Pd3l7U2HDw2ro0qbN7f9d+0lly4IexLS9qXrj5HwwWq4vzFpFwvxaiN+DgLxjalmOIOVvx+//OsKmwAAAIAz5FCQ0rZpXMcrqvPC6+kRXMggeOhrNBLENRHqbUFAY24VSB+OjozmLmbmFGDjaUfNwMLsz3qaWZzTzOorNb1FG4b1GlIwmlnQOXy3JwURwDBAlJGVKS7a8FlNezb8FCz1zEK+1u1/SFciY1wv+tGZQbTEDP/C5qGxc4dNJsLCEQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJo6PAOdGqgiiulbZthu7ncy/CkUlkMv0bQl22alQr6Nd38C66MzZoS9PJtLJ2PFjYuNcuVGAn0Z+92hMzPxRj8=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDfbm3lPFG/UjXidN4baXqCDhQov7TxZPYEB34PmJbMMhYrj5MkKi2x8kpPcdtOrbNC/nICKfRk27FpDVtplCllOe+aCkYW287K1cfj5hHPYPpSIdxYKGZ1aUO6jCmvEnr97cTPIkFlvAw1lZ/TD/iM94I6yf+CE/ba/9fJrNu7ufP12I+KlefakxrSjuVesJJiIbAirdLxjucySj5U8IOMSkjLiaHxqm+PCeMl2dOzn4NLI53dd78lYG5s6vJsIpSwhVECsmewk67ZpggUj3CR/JFfcKMqQ6ZllL2Tko4r69tDG7fFkuJL4AblRn2jZiDAle/t5yfc2tsL9VUJA1Tt", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Parallels Software International Inc.", 
+        "ansible_user_id": "root", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "parallels", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+
+2015-02-05 14:20:41,576 p=7529 u=root |  10.129.44.179 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "10.129.44.179", 
+            "77.221.144.179"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::21c:42ff:fe4c:4433", 
+            "fe80::21c:42ff:fe70:740b"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/17/2015", 
+        "ansible_bios_version": "6.8.23717.1100559", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.13.0-44-generic", 
+            "ro": true, 
+            "root": "UUID=a5e304d2-077d-42e7-be2c-c051ad261f01"
+        }, 
+        "ansible_date_time": {
+            "date": "2015-02-05", 
+            "day": "05", 
+            "epoch": "1423135240", 
+            "hour": "14", 
+            "iso8601": "2015-02-05T11:20:40Z", 
+            "iso8601_micro": "2015-02-05T11:20:40.584419Z", 
+            "minute": "20", 
+            "month": "02", 
+            "second": "40", 
+            "time": "14:20:40", 
+            "tz": "MSK", 
+            "tz_offset": "+0300", 
+            "weekday": "Thursday", 
+            "year": "2015"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "77.221.144.179", 
+            "alias": "eth1", 
+            "gateway": "77.221.144.1", 
+            "interface": "eth1", 
+            "macaddress": "00:1c:42:70:74:0b", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "77.221.144.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801HR/HO/HH (ICH8R/DO/DH) 6 port SATA Controller [AHCI mode] (rev 02)", 
+                "model": "Debian-6-x64-0", 
+                "partitions": {
+                    "sda1": {
+                        "sectors": "41940992", 
+                        "sectorsize": 512, 
+                        "size": "20.00 GB", 
+                        "start": "2048"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "ATA"
+            }
+        }, 
+        "ansible_distribution": "Ubuntu", 
+        "ansible_distribution_major_version": "14", 
+        "ansible_distribution_release": "trusty", 
+        "ansible_distribution_version": "14.04", 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LANGUAGE": "en_US:en", 
+            "LC_CTYPE": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "10.129.44.177 56392 22", 
+            "SSH_CONNECTION": "10.129.44.177 56392 10.129.44.179 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "screen", 
+            "USER": "root", 
+            "XDG_RUNTIME_DIR": "/run/user/0", 
+            "XDG_SESSION_ID": "4", 
+            "_": "/bin/sh"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "10.129.44.179", 
+                "netmask": "255.0.0.0", 
+                "network": "10.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe4c:4433", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:4c:44:33", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_eth1": {
+            "active": true, 
+            "device": "eth1", 
+            "ipv4": {
+                "address": "77.221.144.179", 
+                "netmask": "255.255.255.0", 
+                "network": "77.221.144.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe70:740b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:70:74:0b", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Rack Mount Chassis", 
+        "ansible_fqdn": "ansible-for-config", 
+        "ansible_hostname": "ansible-for-config", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth1", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.13.0-44-generic", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "trusty", 
+            "description": "Ubuntu 14.04 LTS", 
+            "id": "Ubuntu", 
+            "major_release": "14", 
+            "release": "14.04"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 475, 
+        "ansible_memtotal_mb": 990, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sda1", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,errors=remount-ro", 
+                "size_available": 17889648640, 
+                "size_total": 21002579968
+            }
+        ], 
+        "ansible_nodename": "ansible-for-config", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.30GHz", 
+            "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.30GHz"
+        ], 
+        "ansible_processor_cores": 2, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 2, 
+        "ansible_product_name": "Parallels Virtual Platform", 
+        "ansible_product_serial": "Parallels-85 94 92 BA BC 19 4B 82 B6 3B BE 73 81 C9 21 D0", 
+        "ansible_product_uuid": "859492BA-BC19-4B82-B63B-BE7381C921D0", 
+        "ansible_product_version": "None", 
+        "ansible_python_version": "2.7.6", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANtHn+LXbq2Ay48dkkXqJtdyWfxdLorvCsYXXj+LDzSdLQztiMohEran/ox58GQRARQzb5o3iXzpuyKlfoJY5zg0yZZufiwrA04AD8UQE77Reo7foGtshJSfUeYPWN9hEoVdfFQqNkXk1Uu1GiHo2JZCIE7Akg2KwWDuaaWF/Gu3AAAAFQDj3JLVzjZL8jNqIL1pLQ4ZexOHBwAAAIAh+ASFPaeMMICiRCok/kRs9RtdhOrfRRIeOMt3sGqKKpk/L7SGw/y7SnJ9AlObn1+MVjVMBMDxendaIhsARPIqB9qhNjc2Pd3l7U2HDw2ro0qbN7f9d+0lly4IexLS9qXrj5HwwWq4vzFpFwvxaiN+DgLxjalmOIOVvx+//OsKmwAAAIAz5FCQ0rZpXMcrqvPC6+kRXMggeOhrNBLENRHqbUFAY24VSB+OjozmLmbmFGDjaUfNwMLsz3qaWZzTzOorNb1FG4b1GlIwmlnQOXy3JwURwDBAlJGVKS7a8FlNezb8FCz1zEK+1u1/SFciY1wv+tGZQbTEDP/C5qGxc4dNJsLCEQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJo6PAOdGqgiiulbZthu7ncy/CkUlkMv0bQl22alQr6Nd38C66MzZoS9PJtLJ2PFjYuNcuVGAn0Z+92hMzPxRj8=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDfbm3lPFG/UjXidN4baXqCDhQov7TxZPYEB34PmJbMMhYrj5MkKi2x8kpPcdtOrbNC/nICKfRk27FpDVtplCllOe+aCkYW287K1cfj5hHPYPpSIdxYKGZ1aUO6jCmvEnr97cTPIkFlvAw1lZ/TD/iM94I6yf+CE/ba/9fJrNu7ufP12I+KlefakxrSjuVesJJiIbAirdLxjucySj5U8IOMSkjLiaHxqm+PCeMl2dOzn4NLI53dd78lYG5s6vJsIpSwhVECsmewk67ZpggUj3CR/JFfcKMqQ6ZllL2Tko4r69tDG7fFkuJL4AblRn2jZiDAle/t5yfc2tsL9VUJA1Tt", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Parallels Software International Inc.", 
+        "ansible_user_id": "root", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "parallels", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+
+2015-02-05 14:26:06,110 p=7571 u=root |  
+2015-02-05 14:26:06,110 p=7571 u=root |  /usr/bin/ansible -m setup experiments
+2015-02-05 14:26:06,110 p=7571 u=root |  
+2015-02-05 14:26:08,251 p=7571 u=root |  10.129.44.179 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "10.129.44.179", 
+            "77.221.144.179"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::21c:42ff:fe4c:4433", 
+            "fe80::21c:42ff:fe70:740b"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/17/2015", 
+        "ansible_bios_version": "6.8.23717.1100559", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.13.0-44-generic", 
+            "ro": true, 
+            "root": "UUID=a5e304d2-077d-42e7-be2c-c051ad261f01"
+        }, 
+        "ansible_date_time": {
+            "date": "2015-02-05", 
+            "day": "05", 
+            "epoch": "1423135567", 
+            "hour": "14", 
+            "iso8601": "2015-02-05T11:26:07Z", 
+            "iso8601_micro": "2015-02-05T11:26:07.258278Z", 
+            "minute": "26", 
+            "month": "02", 
+            "second": "07", 
+            "time": "14:26:07", 
+            "tz": "MSK", 
+            "tz_offset": "+0300", 
+            "weekday": "Thursday", 
+            "year": "2015"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "77.221.144.179", 
+            "alias": "eth1", 
+            "gateway": "77.221.144.1", 
+            "interface": "eth1", 
+            "macaddress": "00:1c:42:70:74:0b", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "77.221.144.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801HR/HO/HH (ICH8R/DO/DH) 6 port SATA Controller [AHCI mode] (rev 02)", 
+                "model": "Debian-6-x64-0", 
+                "partitions": {
+                    "sda1": {
+                        "sectors": "41940992", 
+                        "sectorsize": 512, 
+                        "size": "20.00 GB", 
+                        "start": "2048"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "ATA"
+            }
+        }, 
+        "ansible_distribution": "Ubuntu", 
+        "ansible_distribution_major_version": "14", 
+        "ansible_distribution_release": "trusty", 
+        "ansible_distribution_version": "14.04", 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LANGUAGE": "en_US:en", 
+            "LC_CTYPE": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "10.129.44.177 56394 22", 
+            "SSH_CONNECTION": "10.129.44.177 56394 10.129.44.179 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "screen", 
+            "USER": "root", 
+            "XDG_RUNTIME_DIR": "/run/user/0", 
+            "XDG_SESSION_ID": "5", 
+            "_": "/bin/sh"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "10.129.44.179", 
+                "netmask": "255.0.0.0", 
+                "network": "10.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe4c:4433", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:4c:44:33", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_eth1": {
+            "active": true, 
+            "device": "eth1", 
+            "ipv4": {
+                "address": "77.221.144.179", 
+                "netmask": "255.255.255.0", 
+                "network": "77.221.144.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe70:740b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:70:74:0b", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Rack Mount Chassis", 
+        "ansible_fqdn": "ansible-for-config", 
+        "ansible_hostname": "ansible-for-config", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth1", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.13.0-44-generic", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "trusty", 
+            "description": "Ubuntu 14.04 LTS", 
+            "id": "Ubuntu", 
+            "major_release": "14", 
+            "release": "14.04"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 473, 
+        "ansible_memtotal_mb": 990, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sda1", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,errors=remount-ro", 
+                "size_available": 17889652736, 
+                "size_total": 21002579968
+            }
+        ], 
+        "ansible_nodename": "ansible-for-config", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.30GHz", 
+            "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.30GHz"
+        ], 
+        "ansible_processor_cores": 2, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 2, 
+        "ansible_product_name": "Parallels Virtual Platform", 
+        "ansible_product_serial": "Parallels-85 94 92 BA BC 19 4B 82 B6 3B BE 73 81 C9 21 D0", 
+        "ansible_product_uuid": "859492BA-BC19-4B82-B63B-BE7381C921D0", 
+        "ansible_product_version": "None", 
+        "ansible_python_version": "2.7.6", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANtHn+LXbq2Ay48dkkXqJtdyWfxdLorvCsYXXj+LDzSdLQztiMohEran/ox58GQRARQzb5o3iXzpuyKlfoJY5zg0yZZufiwrA04AD8UQE77Reo7foGtshJSfUeYPWN9hEoVdfFQqNkXk1Uu1GiHo2JZCIE7Akg2KwWDuaaWF/Gu3AAAAFQDj3JLVzjZL8jNqIL1pLQ4ZexOHBwAAAIAh+ASFPaeMMICiRCok/kRs9RtdhOrfRRIeOMt3sGqKKpk/L7SGw/y7SnJ9AlObn1+MVjVMBMDxendaIhsARPIqB9qhNjc2Pd3l7U2HDw2ro0qbN7f9d+0lly4IexLS9qXrj5HwwWq4vzFpFwvxaiN+DgLxjalmOIOVvx+//OsKmwAAAIAz5FCQ0rZpXMcrqvPC6+kRXMggeOhrNBLENRHqbUFAY24VSB+OjozmLmbmFGDjaUfNwMLsz3qaWZzTzOorNb1FG4b1GlIwmlnQOXy3JwURwDBAlJGVKS7a8FlNezb8FCz1zEK+1u1/SFciY1wv+tGZQbTEDP/C5qGxc4dNJsLCEQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJo6PAOdGqgiiulbZthu7ncy/CkUlkMv0bQl22alQr6Nd38C66MzZoS9PJtLJ2PFjYuNcuVGAn0Z+92hMzPxRj8=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDfbm3lPFG/UjXidN4baXqCDhQov7TxZPYEB34PmJbMMhYrj5MkKi2x8kpPcdtOrbNC/nICKfRk27FpDVtplCllOe+aCkYW287K1cfj5hHPYPpSIdxYKGZ1aUO6jCmvEnr97cTPIkFlvAw1lZ/TD/iM94I6yf+CE/ba/9fJrNu7ufP12I+KlefakxrSjuVesJJiIbAirdLxjucySj5U8IOMSkjLiaHxqm+PCeMl2dOzn4NLI53dd78lYG5s6vJsIpSwhVECsmewk67ZpggUj3CR/JFfcKMqQ6ZllL2Tko4r69tDG7fFkuJL4AblRn2jZiDAle/t5yfc2tsL9VUJA1Tt", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Parallels Software International Inc.", 
+        "ansible_user_id": "root", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "parallels", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+
+2015-02-05 14:26:08,605 p=7571 u=root |  10.129.44.181 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "10.129.44.181", 
+            "109.120.181.56"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::21c:42ff:fe44:4fef", 
+            "fe80::21c:42ff:fec0:4037"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/17/2015", 
+        "ansible_bios_version": "6.8.23717.1100559", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.13.0-44-generic", 
+            "ro": true, 
+            "root": "UUID=a5e304d2-077d-42e7-be2c-c051ad261f01"
+        }, 
+        "ansible_date_time": {
+            "date": "2015-02-05", 
+            "day": "05", 
+            "epoch": "1423135454", 
+            "hour": "14", 
+            "iso8601": "2015-02-05T11:24:14Z", 
+            "iso8601_micro": "2015-02-05T11:24:14.448942Z", 
+            "minute": "24", 
+            "month": "02", 
+            "second": "14", 
+            "time": "14:24:14", 
+            "tz": "MSK", 
+            "tz_offset": "+0300", 
+            "weekday": "Thursday", 
+            "year": "2015"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "109.120.181.56", 
+            "alias": "eth1", 
+            "gateway": "109.120.181.1", 
+            "interface": "eth1", 
+            "macaddress": "00:1c:42:c0:40:37", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "109.120.181.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801HR/HO/HH (ICH8R/DO/DH) 6 port SATA Controller [AHCI mode] (rev 02)", 
+                "model": "Debian-6-x64-0", 
+                "partitions": {
+                    "sda1": {
+                        "sectors": "41940992", 
+                        "sectorsize": 512, 
+                        "size": "20.00 GB", 
+                        "start": "2048"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "ATA"
+            }
+        }, 
+        "ansible_distribution": "Ubuntu", 
+        "ansible_distribution_major_version": "14", 
+        "ansible_distribution_release": "trusty", 
+        "ansible_distribution_version": "14.04", 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LANGUAGE": "en_US:en", 
+            "LC_CTYPE": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "10.129.44.177 39735 22", 
+            "SSH_CONNECTION": "10.129.44.177 39735 10.129.44.181 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "screen", 
+            "USER": "root", 
+            "XDG_RUNTIME_DIR": "/run/user/0", 
+            "XDG_SESSION_ID": "5", 
+            "_": "/bin/sh"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "10.129.44.181", 
+                "netmask": "255.0.0.0", 
+                "network": "10.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fe44:4fef", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:44:4f:ef", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_eth1": {
+            "active": true, 
+            "device": "eth1", 
+            "ipv4": {
+                "address": "109.120.181.56", 
+                "netmask": "255.255.255.0", 
+                "network": "109.120.181.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::21c:42ff:fec0:4037", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:1c:42:c0:40:37", 
+            "module": "e1000", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Rack Mount Chassis", 
+        "ansible_fqdn": "ansible-for-config2", 
+        "ansible_hostname": "ansible-for-config2", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth1", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.13.0-44-generic", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "trusty", 
+            "description": "Ubuntu 14.04 LTS", 
+            "id": "Ubuntu", 
+            "major_release": "14", 
+            "release": "14.04"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 1450, 
+        "ansible_memtotal_mb": 1998, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sda1", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,errors=remount-ro", 
+                "size_available": 17903378432, 
+                "size_total": 21002579968
+            }
+        ], 
+        "ansible_nodename": "ansible-for-config2", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.30GHz", 
+            "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.30GHz"
+        ], 
+        "ansible_processor_cores": 2, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 2, 
+        "ansible_product_name": "Parallels Virtual Platform", 
+        "ansible_product_serial": "Parallels-85 94 92 BA BC 19 4B 82 B6 3B BE 73 81 C9 21 D0", 
+        "ansible_product_uuid": "859492BA-BC19-4B82-B63B-BE7381C921D0", 
+        "ansible_product_version": "None", 
+        "ansible_python_version": "2.7.6", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANtHn+LXbq2Ay48dkkXqJtdyWfxdLorvCsYXXj+LDzSdLQztiMohEran/ox58GQRARQzb5o3iXzpuyKlfoJY5zg0yZZufiwrA04AD8UQE77Reo7foGtshJSfUeYPWN9hEoVdfFQqNkXk1Uu1GiHo2JZCIE7Akg2KwWDuaaWF/Gu3AAAAFQDj3JLVzjZL8jNqIL1pLQ4ZexOHBwAAAIAh+ASFPaeMMICiRCok/kRs9RtdhOrfRRIeOMt3sGqKKpk/L7SGw/y7SnJ9AlObn1+MVjVMBMDxendaIhsARPIqB9qhNjc2Pd3l7U2HDw2ro0qbN7f9d+0lly4IexLS9qXrj5HwwWq4vzFpFwvxaiN+DgLxjalmOIOVvx+//OsKmwAAAIAz5FCQ0rZpXMcrqvPC6+kRXMggeOhrNBLENRHqbUFAY24VSB+OjozmLmbmFGDjaUfNwMLsz3qaWZzTzOorNb1FG4b1GlIwmlnQOXy3JwURwDBAlJGVKS7a8FlNezb8FCz1zEK+1u1/SFciY1wv+tGZQbTEDP/C5qGxc4dNJsLCEQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJo6PAOdGqgiiulbZthu7ncy/CkUlkMv0bQl22alQr6Nd38C66MzZoS9PJtLJ2PFjYuNcuVGAn0Z+92hMzPxRj8=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDfbm3lPFG/UjXidN4baXqCDhQov7TxZPYEB34PmJbMMhYrj5MkKi2x8kpPcdtOrbNC/nICKfRk27FpDVtplCllOe+aCkYW287K1cfj5hHPYPpSIdxYKGZ1aUO6jCmvEnr97cTPIkFlvAw1lZ/TD/iM94I6yf+CE/ba/9fJrNu7ufP12I+KlefakxrSjuVesJJiIbAirdLxjucySj5U8IOMSkjLiaHxqm+PCeMl2dOzn4NLI53dd78lYG5s6vJsIpSwhVECsmewk67ZpggUj3CR/JFfcKMqQ6ZllL2Tko4r69tDG7fFkuJL4AblRn2jZiDAle/t5yfc2tsL9VUJA1Tt", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Parallels Software International Inc.", 
+        "ansible_user_id": "root", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "parallels", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+
+2015-02-05 14:34:03,632 p=7854 u=root |   
+2015-02-05 14:34:03,632 p=7854 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 14:34:03,632 p=7854 u=root |   
+2015-02-05 14:34:03,675 p=7854 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:34:03,676 p=7854 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:34:06,478 p=7854 u=root |  ok: [10.129.44.179]
+2015-02-05 14:34:06,537 p=7854 u=root |  ok: [10.129.44.181]
+2015-02-05 14:34:06,551 p=7854 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:34:16,361 p=7854 u=root |  ok: [10.129.44.179]
+2015-02-05 14:34:16,842 p=7854 u=root |  ok: [10.129.44.181]
+2015-02-05 14:34:16,869 p=7854 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:34:17,065 p=7854 u=root |  ok: [10.129.44.179]
+2015-02-05 14:34:17,071 p=7854 u=root |  ok: [10.129.44.181]
+2015-02-05 14:34:17,078 p=7854 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:34:17,079 p=7854 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:34:17,079 p=7854 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:39:40,365 p=8166 u=root |   
+2015-02-05 14:39:40,365 p=8166 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 14:39:40,365 p=8166 u=root |   
+2015-02-05 14:39:40,375 p=8166 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:39:40,376 p=8166 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:39:44,334 p=8166 u=root |  ok: [10.129.44.181]
+2015-02-05 14:39:44,586 p=8166 u=root |  ok: [10.129.44.179]
+2015-02-05 14:39:44,601 p=8166 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:39:50,079 p=8166 u=root |  ok: [10.129.44.181]
+2015-02-05 14:39:50,220 p=8166 u=root |  ok: [10.129.44.179]
+2015-02-05 14:39:50,229 p=8166 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:39:50,415 p=8166 u=root |  changed: [10.129.44.179]
+2015-02-05 14:39:50,422 p=8166 u=root |  ok: [10.129.44.181]
+2015-02-05 14:39:50,440 p=8166 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:39:50,440 p=8166 u=root |  10.129.44.179              : ok=3    changed=1    unreachable=0    failed=0   
+2015-02-05 14:39:50,440 p=8166 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:50:05,047 p=8521 u=root |   
+2015-02-05 14:50:05,047 p=8521 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -v
+2015-02-05 14:50:05,047 p=8521 u=root |   
+2015-02-05 14:50:05,057 p=8521 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:50:05,058 p=8521 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:50:08,337 p=8521 u=root |  ok: [10.129.44.179]
+2015-02-05 14:50:08,714 p=8521 u=root |  ok: [10.129.44.181]
+2015-02-05 14:50:08,724 p=8521 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:50:14,063 p=8521 u=root |  ok: [10.129.44.181] => {"changed": false}
+2015-02-05 14:50:14,449 p=8521 u=root |  ok: [10.129.44.179] => {"changed": false}
+2015-02-05 14:50:14,457 p=8521 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:50:14,649 p=8521 u=root |  ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:50:14,662 p=8521 u=root |  ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:50:14,674 p=8521 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:50:14,675 p=8521 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:50:14,675 p=8521 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:53:23,215 p=8626 u=root |   
+2015-02-05 14:53:23,216 p=8626 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -vv
+2015-02-05 14:53:23,216 p=8626 u=root |   
+2015-02-05 14:53:23,227 p=8626 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:53:23,228 p=8626 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:53:23,266 p=8626 u=root |  <10.129.44.181> REMOTE_MODULE setup
+2015-02-05 14:53:23,266 p=8626 u=root |  <10.129.44.179> REMOTE_MODULE setup
+2015-02-05 14:53:25,440 p=8626 u=root |  ok: [10.129.44.181]
+2015-02-05 14:53:25,485 p=8626 u=root |  ok: [10.129.44.179]
+2015-02-05 14:53:25,497 p=8626 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:53:25,522 p=8626 u=root |  <10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:53:25,522 p=8626 u=root |  <10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:53:30,905 p=8626 u=root |  ok: [10.129.44.181] => {"changed": false}
+2015-02-05 14:53:31,314 p=8626 u=root |  ok: [10.129.44.179] => {"changed": false}
+2015-02-05 14:53:31,334 p=8626 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:53:31,359 p=8626 u=root |  <10.129.44.179> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:53:31,360 p=8626 u=root |  <10.129.44.181> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:53:31,514 p=8626 u=root |  ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:53:31,516 p=8626 u=root |  ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:53:31,525 p=8626 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:53:31,525 p=8626 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:53:31,525 p=8626 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:54:53,380 p=8737 u=root |   
+2015-02-05 14:54:53,381 p=8737 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -vvv
+2015-02-05 14:54:53,381 p=8737 u=root |   
+2015-02-05 14:54:53,390 p=8737 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:54:53,391 p=8737 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:54:53,431 p=8737 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:54:53,432 p=8737 u=root |  <10.129.44.181> REMOTE_MODULE setup
+2015-02-05 14:54:53,432 p=8737 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:54:53,433 p=8737 u=root |  <10.129.44.179> REMOTE_MODULE setup
+2015-02-05 14:54:53,434 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137293.43-260930641647 && echo $HOME/.ansible/tmp/ansible-tmp-1423137293.43-260930641647'"]
+2015-02-05 14:54:53,435 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137293.44-139025287841436 && echo $HOME/.ansible/tmp/ansible-tmp-1423137293.44-139025287841436'"]
+2015-02-05 14:54:54,898 p=8737 u=root |  <10.129.44.181> PUT /tmp/tmpyU8vXF TO /root/.ansible/tmp/ansible-tmp-1423137293.43-260930641647/setup
+2015-02-05 14:54:54,909 p=8737 u=root |  <10.129.44.179> PUT /tmp/tmpbmBE49 TO /root/.ansible/tmp/ansible-tmp-1423137293.44-139025287841436/setup
+2015-02-05 14:54:54,938 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137293.43-260930641647/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137293.43-260930641647/ >/dev/null 2>&1'"]
+2015-02-05 14:54:54,955 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137293.44-139025287841436/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137293.44-139025287841436/ >/dev/null 2>&1'"]
+2015-02-05 14:54:55,543 p=8737 u=root |  ok: [10.129.44.181]
+2015-02-05 14:54:55,557 p=8737 u=root |  ok: [10.129.44.179]
+2015-02-05 14:54:55,572 p=8737 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:54:55,598 p=8737 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:54:55,599 p=8737 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:54:55,600 p=8737 u=root |  <10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:54:55,600 p=8737 u=root |  <10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:54:55,602 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137295.6-177897661339540 && echo $HOME/.ansible/tmp/ansible-tmp-1423137295.6-177897661339540'"]
+2015-02-05 14:54:55,602 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137295.6-4567038209648 && echo $HOME/.ansible/tmp/ansible-tmp-1423137295.6-4567038209648'"]
+2015-02-05 14:54:55,619 p=8737 u=root |  <10.129.44.179> PUT /tmp/tmpNB3RJo TO /root/.ansible/tmp/ansible-tmp-1423137295.6-177897661339540/apt
+2015-02-05 14:54:55,619 p=8737 u=root |  <10.129.44.181> PUT /tmp/tmpMGmcsp TO /root/.ansible/tmp/ansible-tmp-1423137295.6-4567038209648/apt
+2015-02-05 14:54:55,645 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137295.6-4567038209648/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137295.6-4567038209648/ >/dev/null 2>&1'"]
+2015-02-05 14:54:55,646 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137295.6-177897661339540/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137295.6-177897661339540/ >/dev/null 2>&1'"]
+2015-02-05 14:55:01,041 p=8737 u=root |  ok: [10.129.44.181] => {"changed": false}
+2015-02-05 14:55:01,427 p=8737 u=root |  ok: [10.129.44.179] => {"changed": false}
+2015-02-05 14:55:01,449 p=8737 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:55:01,485 p=8737 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:01,485 p=8737 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:01,486 p=8737 u=root |  <10.129.44.179> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:55:01,486 p=8737 u=root |  <10.129.44.181> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:55:01,489 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137301.49-40958158342363 && echo $HOME/.ansible/tmp/ansible-tmp-1423137301.49-40958158342363'"]
+2015-02-05 14:55:01,489 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137301.49-120661315646693 && echo $HOME/.ansible/tmp/ansible-tmp-1423137301.49-120661315646693'"]
+2015-02-05 14:55:01,508 p=8737 u=root |  <10.129.44.181> PUT /tmp/tmpvhfD7m TO /root/.ansible/tmp/ansible-tmp-1423137301.49-120661315646693/service
+2015-02-05 14:55:01,510 p=8737 u=root |  <10.129.44.179> PUT /tmp/tmpMBQzZi TO /root/.ansible/tmp/ansible-tmp-1423137301.49-40958158342363/service
+2015-02-05 14:55:01,530 p=8737 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137301.49-120661315646693/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137301.49-120661315646693/ >/dev/null 2>&1'"]
+2015-02-05 14:55:01,545 p=8737 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137301.49-40958158342363/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137301.49-40958158342363/ >/dev/null 2>&1'"]
+2015-02-05 14:55:01,634 p=8737 u=root |  ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:55:01,638 p=8737 u=root |  ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:55:01,659 p=8737 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:55:01,659 p=8737 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:55:01,659 p=8737 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:55:47,579 p=8848 u=root |   
+2015-02-05 14:55:47,579 p=8848 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -vvv
+2015-02-05 14:55:47,580 p=8848 u=root |   
+2015-02-05 14:55:47,590 p=8848 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:55:47,590 p=8848 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:55:47,625 p=8848 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:47,626 p=8848 u=root |  <10.129.44.179> REMOTE_MODULE setup
+2015-02-05 14:55:47,628 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581 && echo $HOME/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581'"]
+2015-02-05 14:55:47,633 p=8848 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:47,635 p=8848 u=root |  <10.129.44.181> REMOTE_MODULE setup
+2015-02-05 14:55:47,637 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617 && echo $HOME/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617'"]
+2015-02-05 14:55:47,660 p=8848 u=root |  <10.129.44.179> PUT /tmp/tmp8cs_rW TO /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/setup
+2015-02-05 14:55:47,667 p=8848 u=root |  <10.129.44.181> PUT /tmp/tmpjQBbFH TO /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/setup
+2015-02-05 14:55:47,701 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137347.63-124224118385581/ >/dev/null 2>&1'"]
+2015-02-05 14:55:47,701 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137347.64-34378813487617/ >/dev/null 2>&1'"]
+2015-02-05 14:55:48,315 p=8848 u=root |  ok: [10.129.44.179]
+2015-02-05 14:55:48,331 p=8848 u=root |  ok: [10.129.44.181]
+2015-02-05 14:55:48,340 p=8848 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:55:48,368 p=8848 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:48,369 p=8848 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:48,369 p=8848 u=root |  <10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:55:48,371 p=8848 u=root |  <10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:55:48,371 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281 && echo $HOME/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281'"]
+2015-02-05 14:55:48,373 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557 && echo $HOME/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557'"]
+2015-02-05 14:55:48,390 p=8848 u=root |  <10.129.44.179> PUT /tmp/tmpIgaOUW TO /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/apt
+2015-02-05 14:55:48,398 p=8848 u=root |  <10.129.44.181> PUT /tmp/tmpjTaKPH TO /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/apt
+2015-02-05 14:55:48,419 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137348.37-246624076050281/ >/dev/null 2>&1'"]
+2015-02-05 14:55:48,424 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137348.37-180339066746557/ >/dev/null 2>&1'"]
+2015-02-05 14:55:56,849 p=8848 u=root |  ok: [10.129.44.181] => {"changed": false}
+2015-02-05 14:55:56,954 p=8848 u=root |  ok: [10.129.44.179] => {"changed": false}
+2015-02-05 14:55:56,963 p=8848 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:55:56,991 p=8848 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:56,992 p=8848 u=root |  <10.129.44.179> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:55:56,992 p=8848 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:55:56,993 p=8848 u=root |  <10.129.44.181> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:55:56,994 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334 && echo $HOME/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334'"]
+2015-02-05 14:55:56,995 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355 && echo $HOME/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355'"]
+2015-02-05 14:55:57,012 p=8848 u=root |  <10.129.44.179> PUT /tmp/tmpIFh_bD TO /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/service
+2015-02-05 14:55:57,019 p=8848 u=root |  <10.129.44.181> PUT /tmp/tmpYNz48T TO /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/service
+2015-02-05 14:55:57,057 p=8848 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137356.99-200856054083334/ >/dev/null 2>&1'"]
+2015-02-05 14:55:57,060 p=8848 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137357.0-262824233878355/ >/dev/null 2>&1'"]
+2015-02-05 14:55:57,155 p=8848 u=root |  ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:55:57,161 p=8848 u=root |  ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:55:57,176 p=8848 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:55:57,176 p=8848 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:55:57,176 p=8848 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:56:33,077 p=8949 u=root |   
+2015-02-05 14:56:33,077 p=8949 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -vvv
+2015-02-05 14:56:33,077 p=8949 u=root |   
+2015-02-05 14:56:33,087 p=8949 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:56:33,087 p=8949 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:56:33,121 p=8949 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:33,122 p=8949 u=root |  <10.129.44.179> REMOTE_MODULE setup
+2015-02-05 14:56:33,123 p=8949 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:33,123 p=8949 u=root |  <10.129.44.181> REMOTE_MODULE setup
+2015-02-05 14:56:33,124 p=8949 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652'"]
+2015-02-05 14:56:33,125 p=8949 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672'"]
+2015-02-05 14:56:33,140 p=8949 u=root |  <10.129.44.179> PUT /tmp/tmpNZ7oz6 TO /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/setup
+2015-02-05 14:56:33,166 p=8949 u=root |  <10.129.44.181> PUT /tmp/tmpyEf53g TO /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/setup
+2015-02-05 14:56:33,171 p=8949 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137393.12-194799633001652/ >/dev/null 2>&1'"]
+2015-02-05 14:56:33,211 p=8949 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137393.13-105275124778672/ >/dev/null 2>&1'"]
+2015-02-05 14:56:33,744 p=8949 u=root |  ok: [10.129.44.179]
+2015-02-05 14:56:33,834 p=8949 u=root |  ok: [10.129.44.181]
+2015-02-05 14:56:33,844 p=8949 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:56:33,869 p=8949 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:33,870 p=8949 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:33,870 p=8949 u=root |  <10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:56:33,871 p=8949 u=root |  <10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:56:33,872 p=8949 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.87-172208105460336 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.87-172208105460336'"]
+2015-02-05 14:56:33,872 p=8949 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137393.87-105348641437104 && echo $HOME/.ansible/tmp/ansible-tmp-1423137393.87-105348641437104'"]
+2015-02-05 14:56:41,954 p=9004 u=root |   
+2015-02-05 14:56:41,954 p=9004 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml -vvv
+2015-02-05 14:56:41,954 p=9004 u=root |   
+2015-02-05 14:56:41,964 p=9004 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 14:56:41,964 p=9004 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 14:56:41,999 p=9004 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:42,000 p=9004 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:42,001 p=9004 u=root |  <10.129.44.179> REMOTE_MODULE setup
+2015-02-05 14:56:42,001 p=9004 u=root |  <10.129.44.181> REMOTE_MODULE setup
+2015-02-05 14:56:42,003 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137402.0-9624814164621 && echo $HOME/.ansible/tmp/ansible-tmp-1423137402.0-9624814164621'"]
+2015-02-05 14:56:42,003 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137402.0-204259797506477 && echo $HOME/.ansible/tmp/ansible-tmp-1423137402.0-204259797506477'"]
+2015-02-05 14:56:42,022 p=9004 u=root |  <10.129.44.179> PUT /tmp/tmpLHnUcz TO /root/.ansible/tmp/ansible-tmp-1423137402.0-9624814164621/setup
+2015-02-05 14:56:42,024 p=9004 u=root |  <10.129.44.181> PUT /tmp/tmpYQeqqG TO /root/.ansible/tmp/ansible-tmp-1423137402.0-204259797506477/setup
+2015-02-05 14:56:42,059 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137402.0-204259797506477/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137402.0-204259797506477/ >/dev/null 2>&1'"]
+2015-02-05 14:56:42,060 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137402.0-9624814164621/setup; rm -rf /root/.ansible/tmp/ansible-tmp-1423137402.0-9624814164621/ >/dev/null 2>&1'"]
+2015-02-05 14:56:42,637 p=9004 u=root |  ok: [10.129.44.179]
+2015-02-05 14:56:42,704 p=9004 u=root |  ok: [10.129.44.181]
+2015-02-05 14:56:42,715 p=9004 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 14:56:42,741 p=9004 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:42,742 p=9004 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:42,743 p=9004 u=root |  <10.129.44.179> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:56:42,744 p=9004 u=root |  <10.129.44.181> REMOTE_MODULE apt name=nginx update_cache=yes
+2015-02-05 14:56:42,744 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137402.74-156237114199128 && echo $HOME/.ansible/tmp/ansible-tmp-1423137402.74-156237114199128'"]
+2015-02-05 14:56:42,746 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137402.75-168019503040711 && echo $HOME/.ansible/tmp/ansible-tmp-1423137402.75-168019503040711'"]
+2015-02-05 14:56:42,774 p=9004 u=root |  <10.129.44.179> PUT /tmp/tmpQnOA5D TO /root/.ansible/tmp/ansible-tmp-1423137402.74-156237114199128/apt
+2015-02-05 14:56:42,788 p=9004 u=root |  <10.129.44.181> PUT /tmp/tmpCiz9wj TO /root/.ansible/tmp/ansible-tmp-1423137402.75-168019503040711/apt
+2015-02-05 14:56:42,805 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137402.74-156237114199128/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137402.74-156237114199128/ >/dev/null 2>&1'"]
+2015-02-05 14:56:42,831 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137402.75-168019503040711/apt; rm -rf /root/.ansible/tmp/ansible-tmp-1423137402.75-168019503040711/ >/dev/null 2>&1'"]
+2015-02-05 14:56:48,138 p=9004 u=root |  ok: [10.129.44.181] => {"changed": false}
+2015-02-05 14:56:48,386 p=9004 u=root |  ok: [10.129.44.179] => {"changed": false}
+2015-02-05 14:56:48,399 p=9004 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 14:56:48,423 p=9004 u=root |  <10.129.44.179> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:48,424 p=9004 u=root |  <10.129.44.181> ESTABLISH CONNECTION FOR USER: root
+2015-02-05 14:56:48,425 p=9004 u=root |  <10.129.44.179> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:56:48,425 p=9004 u=root |  <10.129.44.181> REMOTE_MODULE service name=nginx state=started
+2015-02-05 14:56:48,428 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137408.43-115282264481108 && echo $HOME/.ansible/tmp/ansible-tmp-1423137408.43-115282264481108'"]
+2015-02-05 14:56:48,428 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1423137408.43-85890091528648 && echo $HOME/.ansible/tmp/ansible-tmp-1423137408.43-85890091528648'"]
+2015-02-05 14:56:48,445 p=9004 u=root |  <10.129.44.179> PUT /tmp/tmpSH9py4 TO /root/.ansible/tmp/ansible-tmp-1423137408.43-115282264481108/service
+2015-02-05 14:56:48,459 p=9004 u=root |  <10.129.44.181> PUT /tmp/tmpZqV3i6 TO /root/.ansible/tmp/ansible-tmp-1423137408.43-85890091528648/service
+2015-02-05 14:56:48,492 p=9004 u=root |  <10.129.44.179> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.179', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137408.43-115282264481108/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137408.43-115282264481108/ >/dev/null 2>&1'"]
+2015-02-05 14:56:48,503 p=9004 u=root |  <10.129.44.181> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/root/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '10.129.44.181', u"/bin/sh -c 'LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1423137408.43-85890091528648/service; rm -rf /root/.ansible/tmp/ansible-tmp-1423137408.43-85890091528648/ >/dev/null 2>&1'"]
+2015-02-05 14:56:48,584 p=9004 u=root |  ok: [10.129.44.179] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:56:48,605 p=9004 u=root |  ok: [10.129.44.181] => {"changed": false, "name": "nginx", "state": "started"}
+2015-02-05 14:56:48,611 p=9004 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 14:56:48,611 p=9004 u=root |  10.129.44.179              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 14:56:48,612 p=9004 u=root |  10.129.44.181              : ok=3    changed=0    unreachable=0    failed=0   
+2015-02-05 15:10:26,249 p=9173 u=root |   
+2015-02-05 15:10:26,249 p=9173 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:10:26,249 p=9173 u=root |   
+2015-02-05 15:10:26,254 p=9173 u=root |  ERROR: Syntax Error while loading YAML script, playbooks/setup_nginx.yml
+Note: The error may actually appear before this position: line 9, column 40
+
+    sudo: yes
+    debug: msg={{ansible_distribution}}	
+                                       ^
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they 
+start a value. For instance:            
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"      
+
+
+2015-02-05 15:10:50,332 p=9183 u=root |   
+2015-02-05 15:10:50,332 p=9183 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:10:50,332 p=9183 u=root |   
+2015-02-05 15:10:50,338 p=9183 u=root |  ERROR: Syntax Error while loading YAML script, playbooks/setup_nginx.yml
+Note: The error may actually appear before this position: line 9, column 42
+
+    sudo: yes
+    debug: msg={{ ansible_distribution }}	
+                                         ^
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they 
+start a value. For instance:            
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"      
+
+
+2015-02-05 15:11:59,704 p=9201 u=root |   
+2015-02-05 15:11:59,704 p=9201 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:11:59,704 p=9201 u=root |   
+2015-02-05 15:11:59,709 p=9201 u=root |  ERROR: Syntax Error while loading YAML script, playbooks/setup_nginx.yml
+Note: The error may actually appear before this position: line 9, column 42
+
+    sudo: yes
+    debug: msg={{ ansible_distribution }}	
+                                         ^
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they 
+start a value. For instance:            
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"      
+
+
+2015-02-05 15:12:33,029 p=9205 u=root |   
+2015-02-05 15:12:33,030 p=9205 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:12:33,030 p=9205 u=root |   
+2015-02-05 15:12:33,038 p=9205 u=root |  ERROR: Syntax Error while loading YAML script, playbooks/setup_nginx.yml
+Note: The error may actually appear before this position: line 9, column 44
+
+    sudo: yes
+    debug: msg="{{ ansible_distribution }}"	
+                                           ^
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they 
+start a value. For instance:            
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"      
+
+
+2015-02-05 15:13:56,376 p=9209 u=root |   
+2015-02-05 15:13:56,376 p=9209 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:13:56,377 p=9209 u=root |   
+2015-02-05 15:13:56,387 p=9209 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 15:13:56,387 p=9209 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 15:14:01,052 p=9209 u=root |  ok: [10.129.44.179]
+2015-02-05 15:14:01,265 p=9209 u=root |  ok: [10.129.44.181]
+2015-02-05 15:14:01,275 p=9209 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 15:14:06,758 p=9209 u=root |  ok: [10.129.44.181]
+2015-02-05 15:14:06,931 p=9209 u=root |  ok: [10.129.44.179]
+2015-02-05 15:14:06,946 p=9209 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 15:14:07,127 p=9209 u=root |  ok: [10.129.44.179]
+2015-02-05 15:14:07,158 p=9209 u=root |  ok: [10.129.44.181]
+2015-02-05 15:14:07,167 p=9209 u=root |  TASK: [Debug] ***************************************************************** 
+2015-02-05 15:14:07,235 p=9209 u=root |  ok: [10.129.44.179] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:14:07,238 p=9209 u=root |  ok: [10.129.44.181] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:14:07,247 p=9209 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 15:14:07,248 p=9209 u=root |  10.129.44.179              : ok=4    changed=0    unreachable=0    failed=0   
+2015-02-05 15:14:07,248 p=9209 u=root |  10.129.44.181              : ok=4    changed=0    unreachable=0    failed=0   
+2015-02-05 15:16:30,537 p=9340 u=root |   
+2015-02-05 15:16:30,537 p=9340 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml
+2015-02-05 15:16:30,537 p=9340 u=root |   
+2015-02-05 15:16:30,549 p=9340 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 15:16:30,550 p=9340 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 15:16:32,733 p=9340 u=root |  ok: [10.129.44.179]
+2015-02-05 15:16:32,915 p=9340 u=root |  ok: [10.129.44.181]
+2015-02-05 15:16:32,938 p=9340 u=root |  TASK: [Install nginx package] ************************************************* 
+2015-02-05 15:16:38,338 p=9340 u=root |  ok: [10.129.44.181]
+2015-02-05 15:16:42,267 p=9340 u=root |  ok: [10.129.44.179]
+2015-02-05 15:16:42,281 p=9340 u=root |  TASK: [Starting nginx service] ************************************************ 
+2015-02-05 15:16:42,447 p=9340 u=root |  ok: [10.129.44.181]
+2015-02-05 15:16:42,472 p=9340 u=root |  ok: [10.129.44.179]
+2015-02-05 15:16:42,481 p=9340 u=root |  TASK: [Debug] ***************************************************************** 
+2015-02-05 15:16:42,512 p=9340 u=root |  ok: [10.129.44.179] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:16:42,517 p=9340 u=root |  ok: [10.129.44.181] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:16:42,525 p=9340 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 15:16:42,526 p=9340 u=root |  10.129.44.179              : ok=4    changed=0    unreachable=0    failed=0   
+2015-02-05 15:16:42,526 p=9340 u=root |  10.129.44.181              : ok=4    changed=0    unreachable=0    failed=0   
+2015-02-05 15:21:37,928 p=9472 u=root |   
+2015-02-05 15:21:37,928 p=9472 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml --list-tasks
+2015-02-05 15:21:37,928 p=9472 u=root |   
+2015-02-05 15:22:06,197 p=9476 u=root |   
+2015-02-05 15:22:06,197 p=9476 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml --list-tasks
+2015-02-05 15:22:06,197 p=9476 u=root |   
+2015-02-05 15:26:59,345 p=9479 u=root |   
+2015-02-05 15:26:59,345 p=9479 u=root |  /usr/bin/ansible-playbook playbooks/setup_nginx.yml --start-at-task=Debug
+2015-02-05 15:26:59,346 p=9479 u=root |   
+2015-02-05 15:26:59,365 p=9479 u=root |  PLAY [experiments] ************************************************************ 
+2015-02-05 15:26:59,366 p=9479 u=root |  GATHERING FACTS *************************************************************** 
+2015-02-05 15:27:02,543 p=9479 u=root |  ok: [10.129.44.181]
+2015-02-05 15:27:03,073 p=9479 u=root |  ok: [10.129.44.179]
+2015-02-05 15:27:03,094 p=9479 u=root |  TASK: [Debug] ***************************************************************** 
+2015-02-05 15:27:03,126 p=9479 u=root |  ok: [10.129.44.179] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:27:03,128 p=9479 u=root |  ok: [10.129.44.181] => {
+    "msg": "Ubuntu"
+}
+2015-02-05 15:27:03,137 p=9479 u=root |  PLAY RECAP ******************************************************************** 
+2015-02-05 15:27:03,138 p=9479 u=root |  10.129.44.179              : ok=2    changed=0    unreachable=0    failed=0   
+2015-02-05 15:27:03,138 p=9479 u=root |  10.129.44.181              : ok=2    changed=0    unreachable=0    failed=0   
