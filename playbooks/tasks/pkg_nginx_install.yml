@@ -1,0 +1,10 @@
+---
+#Install NGINX package
+  - name: Install nginx package
+    apt: name=nginx update_cache=yes
+    sudo: yes
+
+  - name: Starting nginx service
+    service: name=nginx state=started
+    sudo: yes
+

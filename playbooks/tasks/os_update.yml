@@ -1,0 +1,5 @@
+---
+#Update and upgrade apt-based linux
+- name: Update and upgrade apt-based Linux
+  apt: update-cache=yes state=latest
+  sudo: yes

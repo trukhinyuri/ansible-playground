@@ -3,13 +3,5 @@
   remote_user: root
   tasks:
 
-  - name: Install nginx package
-    apt: name=nginx update_cache=yes
-    sudo: yes
-
-  - name: Starting nginx service
-    service: name=nginx state=started
-    sudo: yes
-
-  - name: Debug
-    debug: msg={{ ansible_distribution }}
+  - include: tasks/os_update.yml
+  - include: tasks/pkg_nginx_install.yml
