@@ -1,0 +1,6 @@
+---
+- hosts: lampFailoverAzure
+  remote_user: azureuser
+  sudo: yes
+  tasks:
+  - include: tasks/os_update.yml

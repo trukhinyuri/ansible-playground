@@ -1,0 +1,9 @@
+---
+- hosts: experiments
+  remote_user: root
+  tasks:
+  - include: tasks/pkg_apache_install.yml
+
+  - name: Check apache service
+    service: name={{ package_name }} state=started
+    sudo: yes

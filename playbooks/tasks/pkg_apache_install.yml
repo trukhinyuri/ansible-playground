@@ -1,0 +1,15 @@
+  - set_fact: package_name=httpd
+    when: ansible_os_family == "Redhat"
+
+  - set_fact: package_name=apache2
+    when: ansible_os_family == "Debian"
+
+  - name: Install httpd package
+    yum: name=httpd state=latest
+    sudo: yes
+    when: ansible_os_family == "Redhat"
+
+  - name: Install apache2 package
+    apt: name=apache2 state=latest
+    sudo: yes
+    when: ansible_os_family == "Debian"
